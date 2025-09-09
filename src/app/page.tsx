@@ -67,7 +67,7 @@ export default function Home() {
           logoAlt="DogMemeCoin Logo"
           logoText="DogMemeCoin"
           className="footer-class"
-          logoClassName="logo-class"
+          svgClassName="logo-class"
         />
       </div>
     </SiteThemeProvider>
