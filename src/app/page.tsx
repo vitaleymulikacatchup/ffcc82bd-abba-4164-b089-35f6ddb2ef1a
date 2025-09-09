@@ -53,6 +53,7 @@ export default function Home() {
         <FooterLogo
           logoSrc='/images/logo.svg'
           logoText='Dog Memecoin'
+          logoAlt='Dog Memecoin Logo'
           columns={[
             { title: 'Company', items: [{ label: 'About Us', onClick: () => {} }, { label: 'Contact', onClick: () => {} }] },
             { title: 'Support', items: [{ label: 'FAQ', onClick: () => {} }, { label: 'Terms of Service', onClick: () => {} }] },
