@@ -7,6 +7,7 @@ import CtaAbout from '@/components/sections/layouts/about/CtaAbout';
 import HowToBuy3D from '@/components/sections/layouts/howtobuy/3DHTB';
 import BigNumberTokenomics from '@/components/sections/layouts/tokenomics/BigNumberTokenomics';
 import FooterLogo from '@/components/footer/FooterLogo';
+import { Rocket, DollarSign, Users } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -45,7 +46,7 @@ export default function Home() {
         <BigNumberTokenomics
           title='Tokenomics'
           description='Understanding the tokenomics is essential to investing in any cryptocurrency.'
-          kpiItems={[{ value: '1M+', description: 'Total Supply', longDescription: 'Total supply of Dog Memecoin is capped at 1 million tokens.', icon: 'Rocket' },{ value: '500K', description: 'Market Cap', longDescription: 'Current market cap based on trading volume.', icon: 'DollarSign' },{ value: '150K+', description: 'Total Holders', longDescription: 'Number of unique holders of Dog Memecoin, demonstrating community trust.', icon: 'Users' }]}
+          kpiItems={[{ value: '1M+', description: 'Total Supply', longDescription: 'Total supply of Dog Memecoin is capped at 1 million tokens.', icon: Rocket },{ value: '500K', description: 'Market Cap', longDescription: 'Current market cap based on trading volume.', icon: DollarSign },{ value: '150K+', description: 'Total Holders', longDescription: 'Number of unique holders of Dog Memecoin, demonstrating community trust.', icon: Users }]}
         />
       </div>
       <div id='footer' data-section='footer' className='scroll-mt-24'>
