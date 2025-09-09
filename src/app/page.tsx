@@ -1,66 +1,73 @@
 "use client";
-
 import { SiteThemeProvider } from '@/components/sections/ThemeProvider';
 import NavbarLayoutFloatingOverlay from '@/components/navigation/NavbarLayoutFloatingOverlay/NavbarLayoutFloatingOverlay';
 import SplitHero from '@/components/sections/layouts/hero/SplitHero';
-import CtaAbout from '@/components/sections/layouts/about/CtaAbout';
+import SplitAbout from '@/components/sections/layouts/about/SplitAbout';
 import HowToBuy3D from '@/components/sections/layouts/howtobuy/3DHTB';
-import BigNumberTokenomics from '@/components/sections/layouts/tokenomics/BigNumberTokenomics';
+import TextGridTokenomics from '@/components/sections/layouts/tokenomics/TextGridTokenomics';
 import FooterLogo from '@/components/footer/FooterLogo';
-import { Rocket, DollarSign, Users } from 'lucide-react';
 
 export default function Home() {
   return (
-    <SiteThemeProvider theme={{ styleVariant: 'funAndTrendy', colorTemplate: 1, textAnimation: 'slide' }}>
+    <SiteThemeProvider theme={{ styleVariant: "funAndTrendy", colorTemplate: 1, textAnimation: "slide" }}>
       <NavbarLayoutFloatingOverlay
-        navItems={[{name: 'Hero', id: 'hero'}, {name: 'About', id: 'about'}, {name: 'How to Buy', id: 'how-to-buy'}, {name: 'Tokenomics', id: 'tokenomics'}, {name: 'Footer', id: 'footer'}]}
-        logoSrc='/images/logo.svg'
-        logoWidth={120}
-        logoHeight={60}
-        buttonText='Get Tokens'
-        onButtonClick={() => { console.log('CTA clicked!'); }}
+        logoSrc="/images/logo.svg"
+        logoWidth={100}
+        logoHeight={30}
+        buttonText="Buy DOGM"
+        navItems={[
+          { name: "hero", id: "hero" },
+          { name: "about", id: "about" },
+          { name: "how-to-buy", id: "how-to-buy" },
+          { name: "tokenomics", id: "tokenomics" },
+          { name: "footer", id: "footer" }
+        ]}
+        onButtonClick={() => { /* handle click */ }}
       />
-      <div id='hero' data-section='hero' className='scroll-mt-24'>
+      <div id="hero" data-section="hero">
         <SplitHero
-          title='Welcome to Dog Memecoin!'
-          subtitle='Join the fun and invest in your favorite dog coin!'
-          primaryButtonText='Get Started'
-          secondaryButtonText='Learn More'
-          onPrimaryButtonClick={() => { console.log('Primary Button Clicked!'); }}
-          onSecondaryButtonClick={() => { console.log('Secondary Button Clicked!'); }}
+          title="Welcome to DogMemeCoin"
+          subtitle="Join the most playful community in crypto!"
+          primaryButtonText="Get Started"
+          secondaryButtonText="Learn More"
+          onPrimaryButtonClick={() => { /* handle primary button click */ }}
+          onSecondaryButtonClick={() => { /* handle secondary button click */ }}
         />
       </div>
-      <div id='about' data-section='about' className='scroll-mt-24'>
-        <CtaAbout
-          title='About Dog Memecoin'
-          descriptions={['A fun and friendly community-driven cryptocurrency that aims to bring joy and rewards to its holders.', 'Explore the basics of how to buy, trade, and benefit from Dog Memecoin.']}
+      <div id="about" data-section="about">
+        <SplitAbout
+          description="DogMemeCoin is more than just a currency; it's a community-driven project aimed at bringing joy and fun to the crypto space."
         />
       </div>
-      <div id='how-to-buy' data-section='how-to-buy' className='scroll-mt-24'>
+      <div id="how-to-buy" data-section="how-to-buy">
         <HowToBuy3D
-          title='How to Buy Dog Memecoin'
-          steps={[{ title: 'Step 1: Get a Wallet', description: 'Create a new wallet to hold your Dog Memecoin.', image: '/images/placeholder1.avif', position: 'left', isCenter: false },{ title: 'Step 2: Buy Ethereum', description: 'Purchase Ethereum on an exchange to trade for Dog Memecoin.', image: '/images/placeholder2.avif', position: 'center', isCenter: true },{ title: 'Step 3: Swap for Dog Memecoin', description: 'Use a DEX to swap your Ethereum for Dog Memecoin!', image: '/images/placeholder3.avif', position: 'right', isCenter: false }]}
-        />
-      </div>
-      <div id='tokenomics' data-section='tokenomics' className='scroll-mt-24'>
-        <BigNumberTokenomics
-          title='Tokenomics'
-          description='Understanding the tokenomics is essential to investing in any cryptocurrency.'
-          kpiItems={[{ value: '1M+', description: 'Total Supply', longDescription: 'Total supply of Dog Memecoin is capped at 1 million tokens.', icon: Rocket },{ value: '500K', description: 'Market Cap', longDescription: 'Current market cap based on trading volume.', icon: DollarSign },{ value: '150K+', description: 'Total Holders', longDescription: 'Number of unique holders of Dog Memecoin, demonstrating community trust.', icon: Users }]}
-        />
-      </div>
-      <div id='footer' data-section='footer' className='scroll-mt-24'>
-        <FooterLogo
-          logoSrc='/images/logo.svg'
-          logoText='Dog Memecoin'
-          logoAlt='Dog Memecoin Logo'
-          columns={[
-            { title: 'Company', items: [{ label: 'About Us', onClick: () => {} }, { label: 'Contact', onClick: () => {} }] },
-            { title: 'Support', items: [{ label: 'FAQ', onClick: () => {} }, { label: 'Terms of Service', onClick: () => {} }] },
-            { title: 'Community', items: [{ label: 'Twitter', onClick: () => {} }, { label: 'Telegram', onClick: () => {} }] }
+          title="How to Buy"
+          steps={[
+            { title: "Step 1", description: "Set up your wallet", image: "/images/placeholder1.avif", position: "left", isCenter: false },
+            { title: "Step 2", description: "Choose an exchange", image: "/images/placeholder2.avif", position: "center", isCenter: true },
+            { title: "Step 3", description: "Buy DogMemeCoin", image: "/images/placeholder3.avif", position: "right", isCenter: false }
           ]}
-          copyrightText='© 2023 Dog Memecoin'
-          onPrivacyClick={() => { console.log('Privacy Policy Clicked!'); }}
+        />
+      </div>
+      <div id="tokenomics" data-section="tokenomics">
+        <TextGridTokenomics
+          title="Tokenomics"
+          description="Transparent and fair token distribution to support the community"
+          tokenData={[
+            { value: "1B", description: "Total Supply" },
+            { value: "10%", description: "Liquidity" },
+            { value: "30%", description: "Community" },
+            { value: "15%", description: "Development" }
+          ]}
+        />
+      </div>
+      <div id="footer" data-section="footer">
+        <FooterLogo
+          logoSrc="/images/logo.svg"
+          logoAlt="DogMemeCoin Logo"
+          logoText="DogMemeCoin"
+          className="footer-class"
+          logoClassName="logo-class"
         />
       </div>
     </SiteThemeProvider>
