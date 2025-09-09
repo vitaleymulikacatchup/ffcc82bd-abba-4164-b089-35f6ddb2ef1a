@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { Inter_Tight, Poppins } from "next/font/google";
+import { Inter_Tight, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import { SiteThemeProvider } from '@/components/sections/ThemeProvider';
 
 const interTight = Inter_Tight({
   variable: "--font-inter-tight",
@@ -9,15 +8,15 @@ const interTight = Inter_Tight({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"]
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
-  title: "DogMemeCoin",
-  description: "Deliver a simple, engaging landing page for a dog-themed memecoin focused on community and accessibility"
+  title: "PawMemecoin",
+  description: "A simple landing page for a dog-themed memecoin: explain concept, show how to buy, tokenomics, and FAQs. No backend or payments yet.",
 };
 
 export default function RootLayout({
@@ -28,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${interTight.variable} ${poppins.variable} antialiased`}
+        className={`${interTight.variable} ${playfairDisplay.variable} antialiased`}
       >
         {children}
       </body>
